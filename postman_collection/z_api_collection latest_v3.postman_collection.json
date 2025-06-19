@@ -1,0 +1,1137 @@
+{
+	"info": {
+		"_postman_id": "cdf6af49-4d17-4c72-b4f9-f747f2e80cd5",
+		"name": "z_api_collection latest_v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19203787",
+		"_collection_link": "https://red-crater-704006.postman.co/workspace/new~f50d3093-6c23-4d6c-9543-c5398c57db38/collection/19203787-cdf6af49-4d17-4c72-b4f9-f747f2e80cd5?action=share&source=collection_link&creator=19203787"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Cognito_Auth_Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-amz-json-1.1",
+								"type": "text"
+							},
+							{
+								"key": "X-Amz-Target",
+								"value": "AWSCognitoIdentityProviderService.InitiateAuth",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"AuthFlow\": \"USER_PASSWORD_AUTH\",\n  \"ClientId\": \"5icfk2ov2h2iahpklqc749fkjb\",\n  \"AuthParameters\": {\n    \"USERNAME\": \"zspectuidev@gmail.com\",\n    \"PASSWORD\": \"zspectuidevApp@12345\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+					},
+					"response": []
+				},
+				{
+					"name": "Cognito_Auth_Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-amz-json-1.1",
+								"type": "text"
+							},
+							{
+								"key": "X-Amz-Target",
+								"value": "AWSCognitoIdentityProviderService.InitiateAuth",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"AuthFlow\": \"REFRESH_TOKEN_AUTH\",\n  \"ClientId\": \"5icfk2ov2h2iahpklqc749fkjb\",\n  \"AuthParameters\": {\n    \"REFRESH_TOKEN\": \"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.MSmGzg89oSnVArcbs5hQQCBFUoRSk5bD7R_ehs3MuPlOoz3PlOubd6ioaVOFaGuRopsjD4NHe8FH98xMhC4w45GgNIw-iYJISHdvfV3ZkgXk6_PdoFr4ETfRqDIWTaggNhESJqDdbHDXlAeKQc2HdxwjNxFOJ_iJKB37Dobu5hIl2O3Hrm0uobx32hzxhWttw4mlJVGpT2eKGsQkG81RESjy_EXkHrzpCK_iCFQ3c2C8h6vvMdt7nTxv9ORUID7z8izPQsZfcG87zj4616rzKBll52hG6Z0PyIbP6Gw0_P-eb4MR51-9Pd5867msmO3uO2lW-JZf0kPJ-gMv4Px_Uw.T2CYprC0Zet22OXA.1p3rbfUPnxo_1TSC0ulBXU4RSrING9Wer_F4I18U43nzmVWDiBBpNIGHj9iQ8Szz_A9DPUT2VvrLmEk_QDExSHDIAHr-6sL70ebsV5jTCXItA621o75qmEUuCjHjNOr8E7JVf2WS63ssVwiEJjxkWUIft36S94XvOCos4m2jVR5oeBMrKzO99VtcuOY6iicaIBY8emmQAoYIvJhYIqOVTsD4cxwGPVu8c2alChSBphGDa5SFuZARW62JS6B5rcYqj-Mauy2r9_LL-Lz_cgszCc8Y4E1MWQih3nuRuG3-flXz6zCxO0pgpqBxb1G9CmZCQKrvyUVi-bdw_z2xUN2f8VF-NMilhxOjay-nYyP_3oOFvDX-o4S4iNj6A-FrZfMUAJZag4gEtDsWBsDz-Dp41SpjVpaEqA76I6SNd0pqszTp171-Ro2MgI6Wud6aiIgGFN7l2bqcUCvz9fFsC83hbysla9dfrXb2SLiF0Y1Yk-D7WWPjKk5mn2QdqmCfV-RHYBKy_-4AadT5usUnXBFntagBlXSJrkhXtk5SUCTYx98cm271NRj2q8tUTstL2kT9UHvPx9CZccv3Gw7gwBpPAi7bOb3cXzKiGCnWYJ4NPTH2ZZRnyEPnU9m2q8gPUqtvvpc4hj8FPUXj-rkAgP7mcfkLcGSQYDl_xF1R0qWmq0Z1jnmZG8l439e1Ji8s3-SbzvHfiNyX0kTENo8T-uLvb8QF5jZs9jmGLneYSGcKrsAfF7D6qPyznV8DC8A5GCWCJ6KexCnw7g96FGB85d2V7ezv3orJeFwTfYfDNk_lVoLo9gpWfI3iMWG3CfPN_u14xyIX8TylJuyMDhAzLkASviZsx5GBgjav-dhZxtDoUxjRT5xqaxuZ1JjTmbzlXRmbW7qMgNEE5ArbHYldqVL1E4tEsH-ORM2gCd1vGw0BLumPNs4gMoyIBK_a6EIocaaTYd5xneBvcfG3CB29gGdjxaqi5hFjmN3DhkkeFZV9qut9JVkLfFihcOx2ax6oqQiGEXwS-c_kVG0IyR_7OKl-tUSp5qCEoWmoT54PJ7Ba0pOMcDc1KTuzg2NFk2ja16HN8uhQeC3LSGvfb7WZgviOc499VJN4caLfksplo48I3OhB18XstLyKLRsuzJXTF22HS-hV7uQsYAVK2O1C7JLHuiznDPqzkLRqSzyhw1UjcXeJAJOYT0S2dbQ3pFN0F3MKV8XBmGYahFqQ3n1c5OInD5wmDXL_sjOvmnDPZDgbMtokboubag-foLU4GE4qnBhjGQzkuu1-puRHNFgccl0PbtcbTiYQT-asBgURXeVygGYEcO8eU-aWgKCyQLRjnw.6HqP8_Li5HbHY8pzTAhTbw\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+					},
+					"response": []
+				},
+				{
+					"name": "Cognito_Auth_LogOUT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-amz-json-1.1",
+								"type": "text"
+							},
+							{
+								"key": "X-Amz-Target",
+								"value": "AWSCognitoIdentityProviderService.GlobalSignOut",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"AccessToken\": \"eyJraWQiOiJNRFhwR2tJK3VGK1BTM0RCWmp6ZWJtcFgwWDBrQ1pEeHhPeUpEa2xiekE0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzMWIzZGQ4YS1lMDIxLTcwNTMtNWJhMi1mNTRmYmJjOWJlN2YiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1ZUVlBiV0xpSyIsImNsaWVudF9pZCI6IjVpY2ZrMm92MmgyaWFocGtscWM3NDlma2piIiwib3JpZ2luX2p0aSI6ImQxMzYzOWU4LTIxMDUtNDBiMy1iYTZhLTA3NWRkMWQ4MjY4OSIsImV2ZW50X2lkIjoiMmI1ZGJmZGYtMTE3NS00YzI2LTliMTctZjhiNTkwMzE4Y2MyIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTc0MzE0MTkwMiwiZXhwIjoxNzQzMTQ1NTAyLCJpYXQiOjE3NDMxNDE5MDIsImp0aSI6IjY2YTEwOTUwLWE5ODMtNDUxMy05MjBmLWZmMGFiMjYxMmE2NyIsInVzZXJuYW1lIjoiMzFiM2RkOGEtZTAyMS03MDUzLTViYTItZjU0ZmJiYzliZTdmIn0.OixCCbk2AYM98ziV9Ig-sUoZD5UydCRI68HnMwOPK0ocy7D-o3nrI5mMoKyccXOWsNisoRel7NMAH2-1q-KUbkNSeUu2U6n--LIOlTKf8uAGyRzUQFgb9Hsl3bBzEJD7pEj7VKcYaOtSE_41pB3mM3XPLCG2LNq9ILhKqZpyObEMT_9bmcII5XbBfGcyk0bYrmBY9YMSWu3oinDqQMW7q00_02YqLkMbSLFUoGpvzQ7gwKnzQh0OAmOe4HatQ1yXNslOP3COJNaUBzM1s-24ySR4L4wnhlaFQc77Jmx97fVFcHE92ZDPlAUcJ0GowINZ5P7EOQrHgUCrgIXaLbaZ8A\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Foundations",
+			"item": [
+				{
+					"name": "Get LefNav Menu",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_menu?org_id=123",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"ui_menu"
+							],
+							"query": [
+								{
+									"key": "org_id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_user_info?email=zspectuidev@gmail.com",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_user_info"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "zspectuidev@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P1 Alert List Page",
+			"item": [
+				{
+					"name": "Get Alert Table",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_get_alerts?orgId={{org_id}}&offset=1001&min_log_id=1&limit=100&start_time=2025-04-10T03:39:22&end_time=2025-05-11T11:59:22&export_csv=0",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"ui_get_alerts"
+							],
+							"query": [
+								{
+									"key": "orgId",
+									"value": "{{org_id}}"
+								},
+								{
+									"key": "offset",
+									"value": "1001"
+								},
+								{
+									"key": "min_log_id",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "severity__gte",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "title__like",
+									"value": "detect",
+									"disabled": true
+								},
+								{
+									"key": "start_time",
+									"value": "2025-04-10T03:39:22"
+								},
+								{
+									"key": "end_time",
+									"value": "2025-05-11T11:59:22"
+								},
+								{
+									"key": "wild_filter",
+									"value": "net",
+									"disabled": true
+								},
+								{
+									"key": "export_csv",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Alert Timeseries Chart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_alert_timeseries?orgId={{org_id}}&zoom_minutes=10&start_time=2025-05-13T03:39:22&end_time=2025-05-14T03:39:22",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_alert_timeseries"
+							],
+							"query": [
+								{
+									"key": "orgId",
+									"value": "{{org_id}}"
+								},
+								{
+									"key": "zoom_minutes",
+									"value": "10"
+								},
+								{
+									"key": "start_time",
+									"value": "2025-05-13T03:39:22"
+								},
+								{
+									"key": "end_time",
+									"value": "2025-05-14T03:39:22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P2 Incident List Page",
+			"item": [
+				{
+					"name": "Get Incident Table",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_get_incidents?orgId=46155a01-5f92-11ee-8d4c-02b235a6790e&min_id=28543&offset=100&limit=10&x_minutes=12600&eventCount__gte=10&severity=MEDIUM",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"ui_get_incidents"
+							],
+							"query": [
+								{
+									"key": "orgId",
+									"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+								},
+								{
+									"key": "min_id",
+									"value": "28543"
+								},
+								{
+									"key": "offset",
+									"value": "100"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "x_minutes",
+									"value": "12600"
+								},
+								{
+									"key": "eventCount__gte",
+									"value": "10"
+								},
+								{
+									"key": "severity",
+									"value": "MEDIUM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Incident Timeseries Chart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_timeseries?orgId={{org_id}}&zoom_minutes=100&start_time=2025-05-13T03:39:22&end_time=2025-05-14T03:39:22",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_incident_timeseries"
+							],
+							"query": [
+								{
+									"key": "orgId",
+									"value": "{{org_id}}"
+								},
+								{
+									"key": "zoom_minutes",
+									"value": "100"
+								},
+								{
+									"key": "start_time",
+									"value": "2025-05-13T03:39:22"
+								},
+								{
+									"key": "end_time",
+									"value": "2025-05-14T03:39:22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P3 Alert Details Page",
+			"item": [
+				{
+					"name": "Get Alert Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_alert_table_details?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&log_id=452255",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_alert_table_details"
+							],
+							"query": [
+								{
+									"key": "min_log_id",
+									"value": "233229",
+									"disabled": true
+								},
+								{
+									"key": "x_minutes",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "org_id",
+									"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+								},
+								{
+									"key": "log_id",
+									"value": "452255"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P4 Incident Details Page",
+			"item": [
+				{
+					"name": "Get Incident Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_details?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&incident_guid=1c142053-a9c9-4e7a-ae7d-4a6dad7a3b96",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_incident_details"
+							],
+							"query": [
+								{
+									"key": "org_id",
+									"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+								},
+								{
+									"key": "min_log_id",
+									"value": "233229",
+									"disabled": true
+								},
+								{
+									"key": "x_minutes",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "incident_guid",
+									"value": "1c142053-a9c9-4e7a-ae7d-4a6dad7a3b96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get genAI Incident Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_genai_summary?incident_guid=cb44ab79-1a19-4d06-b244-5ff16e4b4964&output=json",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_incident_genai_summary"
+							],
+							"query": [
+								{
+									"key": "incident_guid",
+									"value": "cb44ab79-1a19-4d06-b244-5ff16e4b4964"
+								},
+								{
+									"key": "output",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Incident Summary Mermaid Flow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"A name is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('name');",
+									"    pm.expect(pm.response.json().name).to.be.a('string');",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"summary_html\": \"Incident Analysis Report: cb44ab79-1a19-4d06-b244-5ff16e4b4964 AI SUMMARY  Incident cb44ab79-1a19-4d06-b244-5ff16e4b4964 indicates a coordinated, multi-source attempt to flood and potentially disrupt network services targeting assets 172.27.128.98 and 172.27.128.99. Multiple internal IPs (172.27.128.13, 172.27.128.14, 172.27.128.16, 172.27.128.17, 172.27.128.24, 172.27.128.25, 172.27.128.29, 172.27.128.34, 172.27.128.36, 172.27.128.47, 172.27.128.56) alongside others (172.16.29.31, 10.109.44.42, 10.48.85.15, 172.17.12.101, 172.17.43.51, 10.48.85.13, 172.17.5.159, 172.17.12.102, 172.17.1.223, 172.17.1.129) are involved in sending small packet floods, primarily via TCP and potentially UDP (protocols 1 and 6), indicating a distributed denial-of-service (DDoS) attack and/or lateral movement activity. A notable amount of 'suspicious' threat statuses and 'excessive retransmissions' description are observed, pointing towards reliability issues related to the flood, or reconnaissance activity. Furthermore, multiple IPs are targeting 172.27.128.15 suggesting a high-value target.  MITRE ATT&CK MAPPING  * **T1499.002 - Endpoint Denial of Service: Disk Exhaustion:** The small packet flood could be an attempt to exhaust resources on the targeted systems. * **T1498.001 - Internal Defacement:** Given the DOS alerts, the attacker might intend to deface internal services hosted on targeted IPs. * **T1071.001 - Application Layer Protocol: Web Protocols:** If the small packets are HTTP-based, this technique applies. Further analysis of the packet contents is required. * **T1071.004 - Application Layer Protocol: DNS:** If the small packets are DNS-based, this technique applies. Further analysis of the packet contents is required. * **T1021.001 - Remote Services: RDP:** If traffic to 172.27.128.15 has elements of RDP, investigate compromised credentials * **T1018 - Remote System Discovery:** The 'suspicious' detections combined with DOS alerts, suggest lateral movement. * **T1059.001 - Command and Scripting Interpreter: PowerShell:** Investigate for potential PowerShell activity involved with this incident on involved endpoints. * **T1190 - Exploit Public-Facing Application:** Investigate if any of the systems are running potentially vulnerable services. * **T1003 - OS Credential Dumping:** Check EDR for credential dumping tools.  ACTIONABLE RECOMMENDATIONS  1. **Isolate and Contain:** Immediately isolate 172.27.128.98 and 172.27.128.99 from the network to prevent further impact. Similarly, consider isolating the suspected compromised hosts originating the attack. 2. **Investigate Source Hosts:** Prioritize forensic investigation of 172.27.128.13, 172.27.128.14, 172.27.128.16, 172.27.128.17, 172.27.128.24, 172.27.128.25, 172.27.128.29, 172.27.128.34, 172.27.128.36, 172.27.128.47, 172.27.128.56. Focus on recent process execution, scheduled tasks, and network connections. 3. **EDR Pivot:** Pivot to EDR data on 172.27.128.15, 172.27.128.98, and 172.27.128.99 to identify the targeted services/applications and any anomalous behavior preceding the flood. Check EDR logs for credential access and privilege escalation attempts. 4. **Network Forensics:** Capture full packet captures (PCAPs) of traffic to/from the involved IPs. Analyze the packet contents to identify the specific protocol(s) used in the attack and the nature of the 'suspicious' detections. 5. **Telemetry Enrichment:** Enhance telemetry by enabling process command-line auditing and DNS query logging on all endpoints. This will provide more granular visibility into potential malicious activity. 6. **Reputation Analysis:** Investigate the external IPs (if any) involved in the attack against threat intelligence feeds and block malicious ones at the perimeter. 7. **Rate Limiting:** Implement rate limiting on network devices to mitigate the impact of the small packet flood, but ensure legitimate traffic is not affected. 8. **Firewall rules**: Create specific block rules for all IPs involved with this incident, and place them on the edge firewall for increased security. 9. **Update signatures**: Ensure that the current signatures are up to date, to ensure maximum detection.  DETECTION CONFIDENCE LEVEL  Low. Although multiple alerts are triggered, the 'suspicious' detections, excessive retransmissions and combination with small packet floods require deeper investigation to differentiate from legitimate network issues or misconfigurations. Further PCAP analysis is needed to confirm malicious intent. The involvement of multiple internal hosts warrants immediate attention, even if the alerts turn out to be false positives.\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_summary_mermaid_diagram_flow?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"get_incident_summary_mermaid_diagram_flow"
+							],
+							"query": [
+								{
+									"key": "org_id",
+									"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+								},
+								{
+									"key": "output",
+									"value": "html",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "P5 Dashboard",
+			"item": [
+				{
+					"name": "Get Home Dashboard Widgets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{IdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_home_dashboard_widgets?orgId={{org_id}}&widget_name=all&x_minutes=4444",
+							"protocol": "https",
+							"host": [
+								"gvofeuwf16",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"begin",
+								"ui_home_dashboard_widgets"
+							],
+							"query": [
+								{
+									"key": "orgId",
+									"value": "{{org_id}}"
+								},
+								{
+									"key": "widget_name",
+									"value": "all"
+								},
+								{
+									"key": "x_minutes",
+									"value": "4444"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "IdToken",
+			"value": "eyJraWQiOiJZTXBXODVQSmkrQUxHQmR3SWVUSkVReW0yMWpQUnJvM25xOTNsbWRhenN3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzMWIzZGQ4YS1lMDIxLTcwNTMtNWJhMi1mNTRmYmJjOWJlN2YiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV9WVFZQYldMaUsiLCJjb2duaXRvOnVzZXJuYW1lIjoiMzFiM2RkOGEtZTAyMS03MDUzLTViYTItZjU0ZmJiYzliZTdmIiwib3JpZ2luX2p0aSI6IjUwMjgyNjUxLTVkNTEtNGQyMy1hZTM5LWNkZDg4ZjY3ZDVmNiIsImF1ZCI6IjVpY2ZrMm92MmgyaWFocGtscWM3NDlma2piIiwiZXZlbnRfaWQiOiI5NjU5ZDkxMy0yYzViLTQ4ZDYtODU1NC0wNGUxODA3NzJiZDYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTc0NDU1Mjk0NCwiZXhwIjoxNzQ0NTUzODQ0LCJpYXQiOjE3NDQ1NTI5NDQsImp0aSI6IjNjYjA4MTBjLWVkMDMtNGRhMy1hMzc2LWRhZTU5NjE1ZDZkNSIsImVtYWlsIjoienNwZWN0dWlkZXZAZ21haWwuY29tIn0.LDj2frEpPbLjP9YIFU9T8EbJxgkc5CMLjx8FWXguMIa-kvtIfa12ns4dUmvF4SlqWMLgqn4i7OjYLtk4TPGvHdFph2UC--ISNOPJI2Dj3z31F3IZRbkhUEXPOWYeXda6VtACLK7BWDcqJ_NVWKXDYVkIoMV8hQoaKr3pRqdQtXl6g9TVCKV4f_1xyu9FzhBFLtrLrJC4IbmfjUYfoThhkpvDZJDaRIhRCXTZaSNY3tXsvEM-tH3zZA0xPj-vXwNbWNstxvufe-ogqSlXgERkE5_zCHHC_87mqfPhvqjMKf0Syhciy59Mt_XgMRLaTtdgubtkUfFcOVC9kBzDeEwTRg",
+			"type": "default"
+		},
+		{
+			"key": "inc_summary",
+			"value": "<main>\n        <div class=\"card section-ai-summary\">\n            <h2>AI SUMMARY</h2>\n            <p>The incident involves a potential distributed denial-of-service (DDoS) attack and network connectivity\n                issues. Two internal hosts (172.27.128.98 and 172.27.128.99), with MAC addresses 00:15:5d:22:d3:0e and\n                00:15:5d:80:19:00 respectively, are the primary sources of small packet floods targeting multiple\n                internal destinations. Hosts 172.17.5.159, 172.17.12.101, 172.17.12.102, 172.17.43.51, 10.48.85.13 and\n                10.48.85.15 are also identified as sources of small packet floods directed toward 172.27.128.98 and\n                172.27.128.99. Further, the host at 65.1.200.149 has been observed with excessive retransmissions\n                towards 172.27.129.45. Traffic from 172.17.1.129 and 172.27.128.14 is flagged as suspicious to\n                172.17.1.129. The use of both ICMP (protocol 1) and TCP (protocol 6) suggests a multi-pronged attack.\n            </p>\n        </div>\n        <div class=\"card section-mitre-att&ck-mapping\">\n            <h2>MITRE ATT&CK MAPPING</h2>\n            <ul>\n                <li>**T1498.001 - Network Denial of Service: Application Layer DDoS**: Small packet floods targeting\n                    multiple hosts.</li>\n                <li>**T1498.002 - Network Denial of Service: Flood Network**: Excessive retransmissions observed,\n                    indicating network congestion or targeted flooding.</li>\n                <li>**T1071.001 - Application Layer Protocol: Web Protocols**: Investigate HTTP traffic for anomalies\n                    related to DoS, given commonality of web applications.</li>\n                <li>**T1071.002 - Application Layer Protocol: Non-Standard Port**: The use of multiple protocols (ICMP\n                    and TCP) suggests exploitation of multiple ports.</li>\n            </ul>\n        </div>\n        <div class=\"card section-actionable-recommendations\">\n            <h2>ACTIONABLE RECOMMENDATIONS</h2>\n            <p>1. **Isolate and Investigate:** Immediately isolate hosts 172.27.128.98 and 172.27.128.99 from the\n                network to prevent further propagation. Perform a full system scan for malware and rootkits, focusing on\n                processes initiating network traffic.</p>\n            <p>2. **Analyze Packet Captures:** Capture full packet captures (PCAPs) from traffic involving\n                172.27.128.98, 172.27.128.99, and 65.1.200.149. Analyze the packet headers and payloads to determine the\n                nature of the traffic and identify any malicious content or patterns. Use Wireshark or tcpdump to\n                examine the characteristics of the small packets, including size, flags, and source/destination ports.\n            </p>\n            <p>3. **Review Firewall Rules:** Examine firewall rules for any misconfigurations or vulnerabilities that\n                might be allowing the small packet floods to originate from internal sources.</p>\n            <p>4. **Reputation Check:** Check the external IP 65.1.200.149 against threat intelligence feeds and\n                reputation services to determine if it has been associated with malicious activity.</p>\n            <p>5. **EDR Integration:** Pivot to Endpoint Detection and Response (EDR) logs on the source hosts\n                (172.27.128.98, 172.27.128.99, 172.17.5.159, 172.17.12.101, 172.17.12.102, 172.17.43.51, 10.48.85.13 and\n                10.48.85.15) to identify the processes responsible for generating the traffic. Correlate EDR data with\n                the NDR alerts to gain a comprehensive view of the attack.</p>\n            <p>6. **Telemetry Enrichment:** Enrich telemetry with DNS logs to identify any domain resolutions performed\n                by the affected hosts. Investigate DNS traffic for suspicious domain names or patterns.</p>\n            <p>7. **Network Segmentation Review:** Evaluate network segmentation to restrict lateral movement and\n                contain potential breaches.</p>\n            <p>8. **Traffic Shaping/Rate Limiting:** Implement traffic shaping or rate limiting rules on network devices\n                to mitigate the impact of the small packet floods.</p>\n            <p>9. **Investigate \"Suspicious\" Alerts:** Investigate the \"suspicious\" alerts involving 172.27.128.14 and\n                172.17.1.129 to determine the nature of the traffic and whether it is related to the DDoS attack. Check\n                network logs and endpoint logs for any anomalous behavior associated with these IPs.</p>\n        </div>\n        <div class=\"card section-detection-confidence-level\">\n            <h2>DETECTION CONFIDENCE LEVEL</h2>\n            <p>Medium. The combination of small packet floods and excessive retransmissions strongly suggests a\n                denial-of-service attack. However, further investigation is needed to confirm the root cause and\n                identify any compromised systems. The \"suspicious\" alerts add another layer of uncertainty, warranting\n                closer scrutiny.</p>\n        </div>\n    </main>",
+			"type": "default"
+		},
+		{
+			"key": "org_id",
+			"value": "2fe5d092-5f92-11ee-8d4c-02b235a6790e",
+			"type": "default"
+		}
+	]
+}

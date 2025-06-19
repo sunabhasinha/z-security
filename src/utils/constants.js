@@ -1,0 +1,20 @@
+export const MENU_CACHE_KEY = 'menu_data';
+export const MENU_URL = '/ui_menu?org_id=123';
+export const COGNITO_URL = 'https://cognito-idp.ap-south-1.amazonaws.com/';
+export const BASE_URL =
+	'https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/';
+export const ID_TOKEN_KEY = 'idToken';
+export const ACCESS_TOKEN_KEY = 'accessToken';
+export const REFRESH_TOKEN_KEY = 'refreshToken';
+export const AUTH_ERROR = 'Authentication failed';
+export const CLIENT_ID = '5icfk2ov2h2iahpklqc749fkjb';
+export const AUTH_FLOW = 'REFRESH_TOKEN_AUTH';
+export const NO_REFRESH_TOKEN = 'No refresh token available';
+export const ALERT_TABLE_DATA_API = 'ui_get_alerts';
+export const INCIDENT_TABLE_DATA_API = 'ui_get_incidents';
+export const USER_INFO_API = 'get_user_info';
+export const ICON_BASE_PATH = 'https://lucide.dev/icons/';
+export const USER_DETAILS = 'user_info';
+export const ALERT_TABLE_GRAPH = 'get_alert_timeseries';
+export const INCIDENT_TABLE_GRAPH = 'get_incident_timeseries';
+export const ALERT_DETAILS_API = 'get_alert_table_details';

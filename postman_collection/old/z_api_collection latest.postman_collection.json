@@ -1,0 +1,771 @@
+{
+	"info": {
+		"_postman_id": "cdf6af49-4d17-4c72-b4f9-f747f2e80cd5",
+		"name": "z_api_collection latest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19203787",
+		"_collection_link": "https://red-crater-704006.postman.co/workspace/new~f50d3093-6c23-4d6c-9543-c5398c57db38/collection/19203787-cdf6af49-4d17-4c72-b4f9-f747f2e80cd5?action=share&source=collection_link&creator=19203787"
+	},
+	"item": [
+		{
+			"name": "Get LefNav Menu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_menu?org_id=123",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"ui_menu"
+					],
+					"query": [
+						{
+							"key": "org_id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Alert Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_get_alerts?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&offset=0&limit=10&x_minutes=160",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"ui_get_alerts"
+					],
+					"query": [
+						{
+							"key": "org_id",
+							"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "min_log_id",
+							"value": "402554",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "x_minutes",
+							"value": "160"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Alert Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_alert_table_details?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&log_id=409991",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"get_alert_table_details"
+					],
+					"query": [
+						{
+							"key": "org_id",
+							"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+						},
+						{
+							"key": "min_log_id",
+							"value": "233229",
+							"disabled": true
+						},
+						{
+							"key": "x_minutes",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "log_id",
+							"value": "409991"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Incident Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_details?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&incident_guid=1c142053-a9c9-4e7a-ae7d-4a6dad7a3b96",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"get_incident_details"
+					],
+					"query": [
+						{
+							"key": "org_id",
+							"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+						},
+						{
+							"key": "min_log_id",
+							"value": "233229",
+							"disabled": true
+						},
+						{
+							"key": "x_minutes",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "incident_guid",
+							"value": "1c142053-a9c9-4e7a-ae7d-4a6dad7a3b96"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_user_info?email=zspectuidev@gmail.com",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"get_user_info"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "zspectuidev@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Incident Table",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/ui_get_incidents?org_id=46155a01-5f92-11ee-8d4c-02b235a6790e&offset=0&x_minutes=600&limit=20",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"ui_get_incidents"
+					],
+					"query": [
+						{
+							"key": "org_id",
+							"value": "46155a01-5f92-11ee-8d4c-02b235a6790e"
+						},
+						{
+							"key": "min_log_id",
+							"value": "5056",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "x_minutes",
+							"value": "600"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get genAI Incident Summary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{IdToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gvofeuwf16.execute-api.ap-south-1.amazonaws.com/begin/get_incident_genai_summary?incident_guid=0c2ae8cd-5b89-4ff6-8894-b8bd2bfea107",
+					"protocol": "https",
+					"host": [
+						"gvofeuwf16",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"begin",
+						"get_incident_genai_summary"
+					],
+					"query": [
+						{
+							"key": "x_minutes",
+							"value": "60",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "min_log_id",
+							"value": "5056",
+							"disabled": true
+						},
+						{
+							"key": "incident_guid",
+							"value": "0c2ae8cd-5b89-4ff6-8894-b8bd2bfea107"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cognito_Auth_Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-amz-json-1.1",
+						"type": "text"
+					},
+					{
+						"key": "X-Amz-Target",
+						"value": "AWSCognitoIdentityProviderService.InitiateAuth",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"AuthFlow\": \"USER_PASSWORD_AUTH\",\n  \"ClientId\": \"5icfk2ov2h2iahpklqc749fkjb\",\n  \"AuthParameters\": {\n    \"USERNAME\": \"zspectuidev@gmail.com\",\n    \"PASSWORD\": \"zspectuidevApp@12345\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "Cognito_Auth_Refresh",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-amz-json-1.1",
+						"type": "text"
+					},
+					{
+						"key": "X-Amz-Target",
+						"value": "AWSCognitoIdentityProviderService.InitiateAuth",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"AuthFlow\": \"REFRESH_TOKEN_AUTH\",\n  \"ClientId\": \"5icfk2ov2h2iahpklqc749fkjb\",\n  \"AuthParameters\": {\n    \"REFRESH_TOKEN\": \"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.MSmGzg89oSnVArcbs5hQQCBFUoRSk5bD7R_ehs3MuPlOoz3PlOubd6ioaVOFaGuRopsjD4NHe8FH98xMhC4w45GgNIw-iYJISHdvfV3ZkgXk6_PdoFr4ETfRqDIWTaggNhESJqDdbHDXlAeKQc2HdxwjNxFOJ_iJKB37Dobu5hIl2O3Hrm0uobx32hzxhWttw4mlJVGpT2eKGsQkG81RESjy_EXkHrzpCK_iCFQ3c2C8h6vvMdt7nTxv9ORUID7z8izPQsZfcG87zj4616rzKBll52hG6Z0PyIbP6Gw0_P-eb4MR51-9Pd5867msmO3uO2lW-JZf0kPJ-gMv4Px_Uw.T2CYprC0Zet22OXA.1p3rbfUPnxo_1TSC0ulBXU4RSrING9Wer_F4I18U43nzmVWDiBBpNIGHj9iQ8Szz_A9DPUT2VvrLmEk_QDExSHDIAHr-6sL70ebsV5jTCXItA621o75qmEUuCjHjNOr8E7JVf2WS63ssVwiEJjxkWUIft36S94XvOCos4m2jVR5oeBMrKzO99VtcuOY6iicaIBY8emmQAoYIvJhYIqOVTsD4cxwGPVu8c2alChSBphGDa5SFuZARW62JS6B5rcYqj-Mauy2r9_LL-Lz_cgszCc8Y4E1MWQih3nuRuG3-flXz6zCxO0pgpqBxb1G9CmZCQKrvyUVi-bdw_z2xUN2f8VF-NMilhxOjay-nYyP_3oOFvDX-o4S4iNj6A-FrZfMUAJZag4gEtDsWBsDz-Dp41SpjVpaEqA76I6SNd0pqszTp171-Ro2MgI6Wud6aiIgGFN7l2bqcUCvz9fFsC83hbysla9dfrXb2SLiF0Y1Yk-D7WWPjKk5mn2QdqmCfV-RHYBKy_-4AadT5usUnXBFntagBlXSJrkhXtk5SUCTYx98cm271NRj2q8tUTstL2kT9UHvPx9CZccv3Gw7gwBpPAi7bOb3cXzKiGCnWYJ4NPTH2ZZRnyEPnU9m2q8gPUqtvvpc4hj8FPUXj-rkAgP7mcfkLcGSQYDl_xF1R0qWmq0Z1jnmZG8l439e1Ji8s3-SbzvHfiNyX0kTENo8T-uLvb8QF5jZs9jmGLneYSGcKrsAfF7D6qPyznV8DC8A5GCWCJ6KexCnw7g96FGB85d2V7ezv3orJeFwTfYfDNk_lVoLo9gpWfI3iMWG3CfPN_u14xyIX8TylJuyMDhAzLkASviZsx5GBgjav-dhZxtDoUxjRT5xqaxuZ1JjTmbzlXRmbW7qMgNEE5ArbHYldqVL1E4tEsH-ORM2gCd1vGw0BLumPNs4gMoyIBK_a6EIocaaTYd5xneBvcfG3CB29gGdjxaqi5hFjmN3DhkkeFZV9qut9JVkLfFihcOx2ax6oqQiGEXwS-c_kVG0IyR_7OKl-tUSp5qCEoWmoT54PJ7Ba0pOMcDc1KTuzg2NFk2ja16HN8uhQeC3LSGvfb7WZgviOc499VJN4caLfksplo48I3OhB18XstLyKLRsuzJXTF22HS-hV7uQsYAVK2O1C7JLHuiznDPqzkLRqSzyhw1UjcXeJAJOYT0S2dbQ3pFN0F3MKV8XBmGYahFqQ3n1c5OInD5wmDXL_sjOvmnDPZDgbMtokboubag-foLU4GE4qnBhjGQzkuu1-puRHNFgccl0PbtcbTiYQT-asBgURXeVygGYEcO8eU-aWgKCyQLRjnw.6HqP8_Li5HbHY8pzTAhTbw\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "Cognito_Auth_LogOUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-amz-json-1.1",
+						"type": "text"
+					},
+					{
+						"key": "X-Amz-Target",
+						"value": "AWSCognitoIdentityProviderService.GlobalSignOut",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"AccessToken\": \"eyJraWQiOiJNRFhwR2tJK3VGK1BTM0RCWmp6ZWJtcFgwWDBrQ1pEeHhPeUpEa2xiekE0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzMWIzZGQ4YS1lMDIxLTcwNTMtNWJhMi1mNTRmYmJjOWJlN2YiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX1ZUVlBiV0xpSyIsImNsaWVudF9pZCI6IjVpY2ZrMm92MmgyaWFocGtscWM3NDlma2piIiwib3JpZ2luX2p0aSI6ImQxMzYzOWU4LTIxMDUtNDBiMy1iYTZhLTA3NWRkMWQ4MjY4OSIsImV2ZW50X2lkIjoiMmI1ZGJmZGYtMTE3NS00YzI2LTliMTctZjhiNTkwMzE4Y2MyIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTc0MzE0MTkwMiwiZXhwIjoxNzQzMTQ1NTAyLCJpYXQiOjE3NDMxNDE5MDIsImp0aSI6IjY2YTEwOTUwLWE5ODMtNDUxMy05MjBmLWZmMGFiMjYxMmE2NyIsInVzZXJuYW1lIjoiMzFiM2RkOGEtZTAyMS03MDUzLTViYTItZjU0ZmJiYzliZTdmIn0.OixCCbk2AYM98ziV9Ig-sUoZD5UydCRI68HnMwOPK0ocy7D-o3nrI5mMoKyccXOWsNisoRel7NMAH2-1q-KUbkNSeUu2U6n--LIOlTKf8uAGyRzUQFgb9Hsl3bBzEJD7pEj7VKcYaOtSE_41pB3mM3XPLCG2LNq9ILhKqZpyObEMT_9bmcII5XbBfGcyk0bYrmBY9YMSWu3oinDqQMW7q00_02YqLkMbSLFUoGpvzQ7gwKnzQh0OAmOe4HatQ1yXNslOP3COJNaUBzM1s-24ySR4L4wnhlaFQc77Jmx97fVFcHE92ZDPlAUcJ0GowINZ5P7EOQrHgUCrgIXaLbaZ8A\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://cognito-idp.ap-south-1.amazonaws.com/"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "IdToken",
+			"value": "eyJraWQiOiJZTXBXODVQSmkrQUxHQmR3SWVUSkVReW0yMWpQUnJvM25xOTNsbWRhenN3PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIzMWIzZGQ4YS1lMDIxLTcwNTMtNWJhMi1mNTRmYmJjOWJlN2YiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLXNvdXRoLTEuYW1hem9uYXdzLmNvbVwvYXAtc291dGgtMV9WVFZQYldMaUsiLCJjb2duaXRvOnVzZXJuYW1lIjoiMzFiM2RkOGEtZTAyMS03MDUzLTViYTItZjU0ZmJiYzliZTdmIiwib3JpZ2luX2p0aSI6IjUwMjgyNjUxLTVkNTEtNGQyMy1hZTM5LWNkZDg4ZjY3ZDVmNiIsImF1ZCI6IjVpY2ZrMm92MmgyaWFocGtscWM3NDlma2piIiwiZXZlbnRfaWQiOiI5NjU5ZDkxMy0yYzViLTQ4ZDYtODU1NC0wNGUxODA3NzJiZDYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTc0NDU1Mjk0NCwiZXhwIjoxNzQ0NTUzODQ0LCJpYXQiOjE3NDQ1NTI5NDQsImp0aSI6IjNjYjA4MTBjLWVkMDMtNGRhMy1hMzc2LWRhZTU5NjE1ZDZkNSIsImVtYWlsIjoienNwZWN0dWlkZXZAZ21haWwuY29tIn0.LDj2frEpPbLjP9YIFU9T8EbJxgkc5CMLjx8FWXguMIa-kvtIfa12ns4dUmvF4SlqWMLgqn4i7OjYLtk4TPGvHdFph2UC--ISNOPJI2Dj3z31F3IZRbkhUEXPOWYeXda6VtACLK7BWDcqJ_NVWKXDYVkIoMV8hQoaKr3pRqdQtXl6g9TVCKV4f_1xyu9FzhBFLtrLrJC4IbmfjUYfoThhkpvDZJDaRIhRCXTZaSNY3tXsvEM-tH3zZA0xPj-vXwNbWNstxvufe-ogqSlXgERkE5_zCHHC_87mqfPhvqjMKf0Syhciy59Mt_XgMRLaTtdgubtkUfFcOVC9kBzDeEwTRg",
+			"type": "default"
+		}
+	]
+}
